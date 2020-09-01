@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#principal {
+    width: 1000px;
+    height: 900px;
+    margin: auto;
+}
+
+.div_borda {
+    border: 3px solid black;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.escopo_topo {
+    margin-top: 5px;
+}
+
+#banner {
+    height: 190px;
+}
+
+#banner img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+#menu {
+    height: 35px;
+    background-color: #00ff00;
+}
+
+#menu ul {
+    padding: 5px 0;
+}
+
+#menu ul li {
+    display: inline;
+    
+}
+
+#menu a {
+    color: #000000;
+    font: bold 18px verdana;
+    text-decoration: none;
+    padding: 0px 45px;
+}
+
+#menu a:hover {
+    text-decoration: underline;
+}
+
+#lado_esquerdo {
+    width: 796px;
+    height: 450px;
+    float: left;
+    margin-bottom: 5px;
+}
+
+.artigo_a {
+    padding: 20px;
+}
+.art_layout {
+    width: 262px;
+    height: 220px;
+    float: left;
+}
+
+h1 {
+    text-align: center;
+    font: bolder 16px verdana;
+    padding: 30px 0px 20px;
+}
+
+h2 {
+    font: bold 14px verdana;
+    padding: 30px 0 10px 25px;
+}
+
+.art_layout p {
+    font: 12px verdana;
+    padding: 0 20px;
+}
+
+.link_leia_mais {
+    float: right;
+}
+
+#art_1 {
+
+}
+
+#art_2 {
+    margin: 0 5px;
+}
+
+#art_2 img {
+    width: 35%;
+    height: auto;
+    float: left;
+}
+
+#art_3 {
+
+}
+
+#art_4 {
+    width: 796px;
+    height: 225px;
+    clear: both;
+}
+
+#art_4 img {
+    height: 80%;
+    float: left;
+    margin-top: 40px;
+}
+
+
+#banner_2 {
+    width: 199px;
+    height: 450px;
+    float: right;
+}
+
+#banner_2 img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+#rodape {
+    height: 35px;
+    background-color: #00ff00;
+    clear: both;
+}
+
+.lista_artigo {
+    margin-left: 50px;
+}
+
+ul.quadrado {
+    list-style-type: square;
+}
+
+ol.letra {
+    list-style-type: hiragana;
+}
+
+
+/*Formatação Tabela */
+
+table {
+    border-collapse: collapse;
+    margin: 40px 20px;
+    width: 70%;
+    margin-left: 50% auto;
+}
+
+th, td{
+    border-bottom: 1px solid #000;
+    padding: 10px;
+}
+
+tr:nth-child(even) {  /*FAZ O STRIPED NA TABELA*/
+    background-color: #f2f2f2;
+}
+
+/* ----- */
+
+
+#form-email {
+    display: block;
+    padding: 10px 0 10px 20px;
+    width: 600px;
+}
+ label {
+     width: 85px;
+ }
+.div_flex {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+#email_textarea {
+    width: 80%;
+    height: 180px;
+}
+
+.botao_esquerda {
+    margin-left: 85px;
+}
+
+.botao {
+    width: 100px;
+    margin-right: 10px;
+}
+
+#check {
+    margin: 0 5px 0 10px;
+}
