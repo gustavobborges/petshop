@@ -5,6 +5,7 @@
  */
 package dao;
 
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -13,15 +14,18 @@ import java.util.List;
  */
 public interface BaseDao {
     
-    Object salvar(Object object) throws Exception;
+    Object salvar(Object object) throws SQLException;
 
-    void alterar(Object object) throws Exception;
+    void alterar(Object object) throws SQLException;
     
-    void excluir(int id ) throws Exception;
+    void excluir(Long id ) throws SQLException;
 
-    Object pesquisarPorID(Integer id) throws Exception;
+    Object pesquisarPorID(Long id) throws SQLException;
     
-    List pesquisarPorNome(String nome) throws Exception;
+    List pesquisarPorNome(String nome) throws SQLException;
+    
+//    List pesquisarTodos() throws SQLException;
+
     
             
 }

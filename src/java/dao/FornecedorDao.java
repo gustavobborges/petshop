@@ -5,6 +5,7 @@
  */
 package dao;
 
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -13,7 +14,7 @@ import java.util.List;
  */
 public interface FornecedorDao extends BaseDao {
     
-    List pesquisarTodos() throws Exception;
+    List pesquisarTodos() throws SQLException;
     
     
 

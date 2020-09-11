@@ -17,9 +17,9 @@ import java.sql.Statement;
  */
 public class FabricaConexao {
     
-    public static Connection abrirConexao() throws Exception {
-        Class.forName("com.mysql.jdbc.Driver");
-        return DriverManager.getConnection("jdbc:mysql//localhost:3306/petshop", "root", "");              
+    public static Connection abrirConexao() throws SQLException, ClassNotFoundException {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        return DriverManager.getConnection("jdbc:mysql://localhost:3306/petshop?useTimezone=true&serverTimezone=America/Sao_Paulo&zeroDateTimeBehavior=convertToNull", "root", "");              
     }  
     
     public static void fecharConexao(Connection conn, Statement psmt, ResultSet rs) throws SQLException {
