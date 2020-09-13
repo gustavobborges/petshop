@@ -12,11 +12,10 @@ import java.util.List;
  *
  * @author gusta
  */
-public interface FornecedorDao extends BaseDao {
+public interface TelefoneDao extends BaseDao{
     
     List pesquisarTodos() throws SQLException;
     
-    List pesquisarPorNome(String nome) throws SQLException;
+    List pesquisarPorTelefone(String telefone) throws SQLException;
     
-
 }

@@ -22,7 +22,7 @@ public class UtilTeste {
             indice = (int)(Math.random() * caracter.length);
             letra += caracter[indice];
         }       
-        return null;       
+        return letra;       
     }
     
     public static String gerarNumero(int qtd) {
@@ -30,13 +30,16 @@ public class UtilTeste {
         for (int i = 0; i < qtd; i++) {
             numero += (int)(Math.random() * 10);
         }
-        return null;
+        return numero;
     }
-        
+            
     public static String gerarTelefone() {
-        return "(48)3" + gerarCaracter(10);
+        return "(48)3" + gerarNumero(3) + "-" + gerarNumero(4);
     }
     
+        public static String gerarTelefoneSemDDD() {
+        return gerarNumero(4) + "-" + gerarNumero(4);
+    }
     
     public static String gerarEmail() {
         return gerarCaracter(10) + "@gmail.com";
