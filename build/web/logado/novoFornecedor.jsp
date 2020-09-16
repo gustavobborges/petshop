@@ -35,26 +35,31 @@
         <div id="sistema" class="espaco_topo div_borda">
             <h1>Fornecedor</h1>
             
-            <c:if test="${mensagem != null}">
-                <p>${sucesso}</p>
+            <c:if test="${msgSucesso != null}">
+                <p class="mensagemSucesso">${msgSucesso}</p>
+            </c:if>
+                
+            <c:if test="${msgErro != null}">
+                <p class="mensagemErro">${msgErro}</p>
             </c:if>
             
-            <form id="form-email" method="post" action="/SitePetshop/crud_fornecedor?cmd=salvar">
+            <form id="form_email" method="post" action="/SitePetshop/crud_fornecedor?cmd=salvar">
+                <input type="hidden" name="id" value="${fornecedor.id}" >
                 <div class="div_flex">
                     <label>Nome: </label>
-                    <input type="text" name="nome" required>
+                    <input type="text" name="nome" value="${fornecedor.nome}">
                 </div>     
                 <div class="div_flex">
                     <label>Email: </label>
-                    <input type="text" name="email" required>
+                    <input type="text" name="email" value="${fornecedor.email}">
                 </div>  
                 <div class="div_flex">
                     <label>Telefone: </label>
-                    <input type="text" name="telefone" required>
+                    <input type="text" name="telefone" value="${fornecedor.telefone}">
                 </div>  
                 <div class="div_flex">
                     <label>Descrição: </label>
-                    <textarea name="descricao" required></textarea>
+                    <textarea name="descricao" value="${fornecedor.descricao}" required></textarea>
                 </div>               
                 <div class="div_flex">
                     <input class="botao botao_esquerda" type="submit" value="Salvar">
