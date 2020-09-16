@@ -71,7 +71,7 @@ public class FornecedorDaoImplTest {
     /**
      * Test of excluir method, of class FornecedorDaoImpl.
      */
-//    @Test
+    @Test
     public void testExcluir() throws SQLException {
         System.out.println("excluir");
         buscarFornecedorBD();
@@ -94,7 +94,7 @@ public class FornecedorDaoImplTest {
     /**
      * Test of pesquisarPorNome method, of class FornecedorDaoImpl.
      */
-//    @Test
+    @Test
     public void testPesquisarPorNome() throws SQLException {
         System.out.println("pesquisarPorNome");
         buscarFornecedorBD();
@@ -106,7 +106,7 @@ public class FornecedorDaoImplTest {
     /**
      * Test of pesquisarTodos method, of class FornecedorDaoImpl.
      */
-//    @Test
+    @Test
     public void testPesquisarTodos() throws SQLException {
         System.out.println("pesquisarTodos");
         buscarFornecedorBD();

@@ -71,7 +71,7 @@ public class TelefoneDaoImplTest {
       
     }
 
-    @Test
+//    @Test;
     public void testPesquisarPorNome() throws Exception {
         System.out.println("pesquisarPorNome");
      
