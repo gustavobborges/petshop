@@ -42,8 +42,43 @@ public class FornecedorControle extends HttpServlet {
             case "salvar" :
                 novo();
                 break;
+                
+            case "excluir" :
+                excluir();
+                break;
+                
+            case "alterar" :
+                alterar();
+                break;
+              
         }
         rd.forward(request, response);
+    }
+    
+    private void alterar() {
+        Long id = Long.parseLong(request.getParameter("idTela"));
+        fornecedorDao = new FornecedorDaoImpl();
+        
+        try {
+            Fornecedor forn = (Fornecedor) fornecedorDao.pesquisarPorID(id);
+            request.setAttribute("fornecedor", forn);
+
+        } catch (Exception e) {
+            request.setAttribute("msgErro", "Erro ao tentar pesquisar!" + e.getMessage());
+        }
+        rd = request.getRequestDispatcher("logado/novoFornecedor.jsp");
+    }
+    
+    private void excluir() {
+       Long id = Long.parseLong(request.getParameter("idTela"));
+       fornecedorDao = new FornecedorDaoImpl();
+       try {
+           fornecedorDao.excluir(id);
+           request.setAttribute("msgSucesso", "Excluído com sucesso!");
+       } catch (Exception e) {
+           request.setAttribute("msgErro", "Erro ao tentar excluir!");
+       }
+        rd = request.getRequestDispatcher("logado/novoFornecedor.jsp");
     }
     
     private void novo() {
@@ -55,17 +90,20 @@ public class FornecedorControle extends HttpServlet {
         fornecedor.setEmail(request.getParameter("email"));
         fornecedor.setTelefone(request.getParameter("telefone"));
         fornecedor.setDescricao(request.getParameter("descricao"));
-        fornecedor.setDataCadastro(new Date());
         try {
             fornecedorDao = new FornecedorDaoImpl();
             if (id != null) {
-                
+                fornecedor.setId(Long.parseLong(id));
+                fornecedorDao.alterar(fornecedor);
+                request.setAttribute("msgSucesso", "Alterado com sucesso!");
+
             } else {
+                fornecedor.setDataCadastro(new Date());
                 fornecedorDao.salvar(fornecedor);
-                request.setAttribute("mensagem", "Salvo com sucesso!");
+                request.setAttribute("msgSucesso", "Salvo com sucesso!");
             }
         } catch (Exception e) {
-            request.setAttribute("mensagem", "Erro ao salvar!");
+            request.setAttribute("msgErro", "Erro ao salvar!");
         }
         rd = request.getRequestDispatcher("logado/novoFornecedor.jsp");
 
@@ -77,11 +115,20 @@ public class FornecedorControle extends HttpServlet {
         try {
             fornecedorDao = new FornecedorDaoImpl();
             List<Fornecedor> forns = fornecedorDao.pesquisarPorNome(nome);
-            request.setAttribute("fornecedores", forns);
-            rd = request.getRequestDispatcher("logado/fornecedor.jsp");
+            
+            if(forns.isEmpty()) {
+                request.setAttribute("msgAlerta", "Não foi encontrado nenhum registro com esse nome!");
+                request.setAttribute("fornecedores", null);
+                forns = null;
+            } else {
+                request.setAttribute("fornecedores", forns);
+            }          
                                         
         } catch (Exception e) {
+            request.setAttribute("msgErro", "Erro ao pesquisa por nome!" + e.getMessage());
         }
+        rd = request.getRequestDispatcher("logado/fornecedor.jsp");
+
     }
 
     @Override
