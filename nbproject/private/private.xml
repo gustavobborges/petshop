@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>src/java/dao/ProdutoDaoImpl.java</url>
+            <bookmark id="1">
+                <name/>
+                <line>20</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/gusta/Documents/NetBeansProjects/SitePetshop/web/views/contato.jsp</file>
-            <file>file:/C:/Users/gusta/Documents/NetBeansProjects/SitePetshop/web/css/style.css</file>
             <file>file:/C:/Users/gusta/Documents/NetBeansProjects/SitePetshop/src/java/controle/FornecedorControle.java</file>
+            <file>file:/C:/Users/gusta/Documents/NetBeansProjects/SitePetshop/src/java/dao/ProdutoDao.java</file>
             <file>file:/C:/Users/gusta/Documents/NetBeansProjects/SitePetshop/web/logado/fornecedor.jsp</file>
-            <file>file:/C:/Users/gusta/Documents/NetBeansProjects/SitePetshop/web/logado/novoFornecedor.jsp</file>
+            <file>file:/C:/Users/gusta/Documents/NetBeansProjects/SitePetshop/src/java/dao/FornecedorDaoImpl.java</file>
+            <file>file:/C:/Users/gusta/Documents/NetBeansProjects/SitePetshop/src/java/dao/TelefoneDaoImpl.java</file>
+            <file>file:/C:/Users/gusta/Documents/NetBeansProjects/SitePetshop/src/java/controle/ProdutoControle.java</file>
+            <file>file:/C:/Users/gusta/Documents/NetBeansProjects/SitePetshop/src/java/dao/ProdutoDaoImpl.java</file>
+            <file>file:/C:/Users/gusta/Documents/NetBeansProjects/SitePetshop/web/logado/novoProduto.jsp</file>
+            <file>file:/C:/Users/gusta/Documents/NetBeansProjects/SitePetshop/src/java/dao/BaseDao.java</file>
+            <file>file:/C:/Users/gusta/Documents/NetBeansProjects/SitePetshop/web/logado/produto.jsp</file>
         </group>
     </open-files>
 </project-private>

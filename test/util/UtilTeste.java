@@ -37,10 +37,15 @@ public class UtilTeste {
         return "(48)3" + gerarNumero(3) + "-" + gerarNumero(4);
     }
     
-        public static String gerarTelefoneSemDDD() {
+    
+    public static String gerarTelefoneSemDDD() {
         return gerarNumero(4) + "-" + gerarNumero(4);
     }
     
+    public static String gerarPreco() {
+        return "R$" + gerarNumero(2) + "," + gerarNumero(2);
+    }
+        
     public static String gerarEmail() {
         return gerarCaracter(10) + "@gmail.com";
     }

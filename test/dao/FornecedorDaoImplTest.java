@@ -71,16 +71,14 @@ public class FornecedorDaoImplTest {
     /**
      * Test of excluir method, of class FornecedorDaoImpl.
      */
-    @Test
+//    @Test
     public void testExcluir() throws SQLException {
         System.out.println("excluir");
         buscarFornecedorBD();
         fornecedorDao.excluir(fornecedor.getId());
         
         Fornecedor fornecedorExc = (Fornecedor) fornecedorDao.pesquisarPorID(fornecedor.getId());
-        assertNull(fornecedorExc);
-
-               
+        assertNull(fornecedorExc);           
     }
 
     /**

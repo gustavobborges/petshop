@@ -22,7 +22,7 @@ public interface BaseDao {
 
     Object pesquisarPorID(Long id) throws SQLException;
     
-    List pesquisarPorNome(String nome) throws SQLException;
+//    List pesquisarPorNome(String nome) throws SQLException;
     
 //    List pesquisarTodos() throws SQLException;
 

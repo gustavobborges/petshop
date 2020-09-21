@@ -12,9 +12,8 @@ import java.util.List;
  *
  * @author gusta
  */
-public interface FornecedorDao extends BaseDao {
-
-        
+public interface ProdutoDao extends BaseDao{
+    
     List pesquisarTodos() throws SQLException;
     
     List pesquisarPorNome(String nome) throws SQLException;
