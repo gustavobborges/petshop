@@ -9,6 +9,7 @@ import entidade.Produto;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.time.LocalDate;
 import java.util.List;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -27,7 +28,7 @@ public class ProdutoDaoImplTest {
         produtoDao = new ProdutoDaoImpl();
     }
 
-//    @Test
+    @Test
     public void testSalvar() throws Exception {
         System.out.println("salvar");
         
@@ -41,7 +42,7 @@ public class ProdutoDaoImplTest {
         }     
     }
 
-//    @Test
+    @Test
     public void testAlterar() throws Exception {
      System.out.println("alterar");
         buscarProdutoBD();
@@ -57,7 +58,7 @@ public class ProdutoDaoImplTest {
         }
     }
 
-//    @Test
+    @Test
     public void testExcluir() throws Exception {
         System.out.println("excluir");
         buscarProdutoBD();
@@ -72,7 +73,7 @@ public class ProdutoDaoImplTest {
     public void testPesquisarPorID() throws Exception {
        
     }
-
+//
     @Test
     public void testPesquisarPorNome() throws Exception {
         System.out.println("pesquisarPorNome");
@@ -82,7 +83,7 @@ public class ProdutoDaoImplTest {
         assertTrue(!produtoPorNome.isEmpty());  
     }
 
-//    @Test
+    @Test
     public void testPesquisarTodos() throws Exception {
         System.out.println("pesquisarTodos");
         buscarProdutoBD();
@@ -94,6 +95,8 @@ public class ProdutoDaoImplTest {
     Connection conexao;
     PreparedStatement preparando;
     ResultSet resultSet;
+    String cogigo= "";
+    LocalDate localDateNovo = LocalDate.now();
 
     String consulta = "Select max(id) as id FROM produto";
 
