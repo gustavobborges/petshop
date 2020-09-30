@@ -43,8 +43,6 @@ public class ProdutoDaoImpl implements ProdutoDao {
             resultSet = preparando.getGeneratedKeys();
             resultSet.next();
             produto.setId(resultSet.getLong(1));
-        } catch (ClassNotFoundException ex) {
-            System.out.println("Erro no driver Mysql " + ex.getMessage());
         }
         finally{
             FabricaConexao.fecharConexao(conexao, preparando, resultSet);
@@ -67,29 +65,18 @@ public class ProdutoDaoImpl implements ProdutoDao {
             preparando.setString(5, produto.getCodigo());
             preparando.setLong(6, produto.getId());
             preparando.executeUpdate();
-          
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(FornecedorDaoImpl.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             FabricaConexao.fecharConexao(conexao, preparando, resultSet);      
         }
-    
     }    
 
     @Override
     public void excluir(Long id) throws SQLException {
         try {
-            try {
-                conexao = FabricaConexao.abrirConexao();
-                preparando = conexao.prepareStatement("DELETE FROM produto WHERE id = ?");
-                preparando.setLong(1, id);
-                preparando.executeUpdate();
-                
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(FornecedorDaoImpl.class.getName()).log(Level.SEVERE, null, ex);
-            }
-
-
+            conexao = FabricaConexao.abrirConexao();
+            preparando = conexao.prepareStatement("DELETE FROM produto WHERE id = ?");
+            preparando.setLong(1, id);
+            preparando.executeUpdate();
         } finally {
             FabricaConexao.fecharConexao(conexao, preparando, resultSet);      
         }
@@ -114,9 +101,6 @@ public class ProdutoDaoImpl implements ProdutoDao {
                     resultSet.getString("codigo")
                 );          
             }
-                
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(FornecedorDaoImpl.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             FabricaConexao.fecharConexao(conexao, preparando, resultSet);          
         }
@@ -144,8 +128,6 @@ public class ProdutoDaoImpl implements ProdutoDao {
                 );
                 produtos.add(produto);
             }
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ProdutoDaoImpl.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             FabricaConexao.fecharConexao(conexao, preparando, resultSet);          
 
@@ -154,7 +136,7 @@ public class ProdutoDaoImpl implements ProdutoDao {
     }
 
     @Override
-    public List pesquisarTodos() throws SQLException {
+    public List<Produto> pesquisarTodo() throws SQLException {
         String consulta = "SELECT * FROM produto";
         List<Produto> produtos = new ArrayList<>();
         Produto produto;
@@ -173,11 +155,10 @@ public class ProdutoDaoImpl implements ProdutoDao {
                 );
                 produtos.add(produto);
             }
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(FornecedorDaoImpl.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             FabricaConexao.fecharConexao(conexao, preparando, resultSet);          
         }
         return produtos;
     }  
+
 }

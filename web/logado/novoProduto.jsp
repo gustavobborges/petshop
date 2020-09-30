@@ -5,11 +5,10 @@
 --%>
 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Petshop - Novo Produto</title>
     <link rel="stylesheet" href="/SitePetshop/css/style.css">
@@ -48,23 +47,23 @@
                 <input type="hidden" name="id" value="${produto.id}" >
                 <div class="div_flex">
                     <label>Nome: </label>
-                    <input type="text" name="nome" value="${produto.nome}">
+                    <input type="text" name="nome" required value="${produto.nome}">
                 </div>     
                 <div class="div_flex">
-                    <label>DescriÃ§Ã£o: </label>
-                    <input type="text" name="descricao" value="${produto.descricao}">
+                    <label>Descrição: </label>
+                    <input type="text" name="descricao" required value="${produto.descricao}">
                 </div>  
                 <div class="div_flex">
-                    <label>PreÃ§o: </label>
-                    <input type="text" name="preco" value="${produto.preco}">
+                    <label>Preço: </label>
+                    <input type="text" name="preco" required value="${produto.preco}">
                 </div>  
                 <div class="div_flex">
                     <label>Estoque </label>
-                    <input type="text" name="estoque" value="${produto.estoque}">
+                    <input type="text" name="estoque" required value="${produto.estoque}">
                 </div>
                 <div class="div_flex">
-                    <label>CÃ³digo </label>
-                    <input type="text" name="codigo" value="${produto.codigo}">
+                    <label>Código </label>
+                    <input type="text" name="codigo" required value="${produto.codigo}">
                 </div>
                 <div class="div_flex">
                     <input class="botao botao_esquerda" type="submit" value="Salvar">

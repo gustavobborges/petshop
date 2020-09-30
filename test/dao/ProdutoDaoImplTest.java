@@ -87,7 +87,7 @@ public class ProdutoDaoImplTest {
     public void testPesquisarTodos() throws Exception {
         System.out.println("pesquisarTodos");
         buscarProdutoBD();
-        List<Produto> produtos = produtoDao.pesquisarTodos();
+        List<Produto> produtos = produtoDao.pesquisarTodo();
         assertTrue(!produtos.isEmpty());     
     }
     

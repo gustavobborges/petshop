@@ -5,6 +5,7 @@
  */
 package dao;
 
+import entidade.Produto;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -14,8 +15,8 @@ import java.util.List;
  */
 public interface ProdutoDao extends BaseDao{
     
-    List pesquisarTodos() throws SQLException;
+    List<Produto> pesquisarPorNome(String nome)throws SQLException;
     
-    List pesquisarPorNome(String nome) throws SQLException;
+    List<Produto> pesquisarTodo()throws SQLException;
     
 }

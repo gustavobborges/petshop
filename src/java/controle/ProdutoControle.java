@@ -84,7 +84,6 @@ public class ProdutoControle extends HttpServlet {
         Produto produto = new Produto();
         
         String id = request.getParameter("id");
-
         produto.setNome(request.getParameter("nome"));
         produto.setDescricao(request.getParameter("descricao"));
         produto.setPreco(request.getParameter("preco"));
