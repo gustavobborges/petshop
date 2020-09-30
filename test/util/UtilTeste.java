@@ -25,6 +25,8 @@ public class UtilTeste {
         return letra;       
     }
     
+    
+    
     public static String gerarNumero(int qtd) {
         String numero = "";
         for (int i = 0; i < qtd; i++) {
@@ -50,8 +52,13 @@ public class UtilTeste {
         return gerarCaracter(10) + "@gmail.com";
     }
     
+    public static String gerarAno() {
+        return "1" + gerarNumero(3);
+    }
+    
     public static void main(String[] args) {
         System.out.println(UtilTeste.gerarEmail());
     }
+
     
 }

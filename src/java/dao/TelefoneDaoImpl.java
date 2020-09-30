@@ -45,8 +45,7 @@ public class TelefoneDaoImpl implements TelefoneDao{
             resultSet = preparando.getGeneratedKeys();
             resultSet.next();
             telefone.setId(resultSet.getLong(1));
-        } catch (ClassNotFoundException ex) {
-            System.out.println("Erro no driver Mysql " + ex.getMessage());
+
         }
         finally{
             FabricaConexao.fecharConexao(conexao, preparando, resultSet);
@@ -68,9 +67,7 @@ public class TelefoneDaoImpl implements TelefoneDao{
             preparando.setString(4, telefone.getContato());
             preparando.setLong(5, telefone.getId());
             preparando.executeUpdate();
-          
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(FornecedorDaoImpl.class.getName()).log(Level.SEVERE, null, ex);
+
         } finally {
             FabricaConexao.fecharConexao(conexao, preparando, resultSet);      
         }
@@ -84,8 +81,7 @@ public class TelefoneDaoImpl implements TelefoneDao{
                preparando.setLong(1, id);
                preparando.executeUpdate();
 
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(TelefoneDaoImpl.class.getName()).log(Level.SEVERE, null, ex);
+
         } finally {
             FabricaConexao.fecharConexao(conexao, preparando, resultSet);      
         }
@@ -109,9 +105,7 @@ public class TelefoneDaoImpl implements TelefoneDao{
                     resultSet.getString("contato")
                 );          
             }
-                
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(FornecedorDaoImpl.class.getName()).log(Level.SEVERE, null, ex);
+
         } finally {
             FabricaConexao.fecharConexao(conexao, preparando, resultSet);          
         }
@@ -138,8 +132,7 @@ public class TelefoneDaoImpl implements TelefoneDao{
                 );
                 telefones.add(telefone);
             }
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(FornecedorDaoImpl.class.getName()).log(Level.SEVERE, null, ex);
+
         } finally {
             FabricaConexao.fecharConexao(conexao, preparando, resultSet);          
         }
@@ -166,8 +159,7 @@ public class TelefoneDaoImpl implements TelefoneDao{
                 );
                 telefones.add(telefone);
             }
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(FornecedorDaoImpl.class.getName()).log(Level.SEVERE, null, ex);
+
         } finally {
             FabricaConexao.fecharConexao(conexao, preparando, resultSet);          
         }

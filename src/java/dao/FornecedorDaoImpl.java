@@ -44,8 +44,6 @@ public class FornecedorDaoImpl implements FornecedorDao {
             resultSet = preparando.getGeneratedKeys();
             resultSet.next();
             fornecedor.setId(resultSet.getLong(1));
-        } catch (ClassNotFoundException ex) {
-            System.out.println("Erro no driver Mysql " + ex.getMessage());
         }
         finally{
             FabricaConexao.fecharConexao(conexao, preparando, resultSet);
@@ -68,8 +66,7 @@ public class FornecedorDaoImpl implements FornecedorDao {
             preparando.setLong(5, fornecedor.getId());
             preparando.executeUpdate();
           
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(FornecedorDaoImpl.class.getName()).log(Level.SEVERE, null, ex);
+  
         } finally {
             FabricaConexao.fecharConexao(conexao, preparando, resultSet);      
         }
@@ -78,18 +75,11 @@ public class FornecedorDaoImpl implements FornecedorDao {
 
     @Override
     public void excluir(Long id) throws SQLException {
-        try {
-            try {
-                conexao = FabricaConexao.abrirConexao();
-                preparando = conexao.prepareStatement("DELETE FROM fornecedor WHERE id = ?");
-                preparando.setLong(1, id);
-                preparando.executeUpdate();
-                
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(FornecedorDaoImpl.class.getName()).log(Level.SEVERE, null, ex);
-            }
-
-
+        try {    
+            conexao = FabricaConexao.abrirConexao();
+            preparando = conexao.prepareStatement("DELETE FROM fornecedor WHERE id = ?");
+            preparando.setLong(1, id);
+            preparando.executeUpdate();
         } finally {
             FabricaConexao.fecharConexao(conexao, preparando, resultSet);      
         }
@@ -114,9 +104,7 @@ public class FornecedorDaoImpl implements FornecedorDao {
                     resultSet.getDate("dataCadastro")
                 );          
             }
-                
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(FornecedorDaoImpl.class.getName()).log(Level.SEVERE, null, ex);
+
         } finally {
             FabricaConexao.fecharConexao(conexao, preparando, resultSet);          
         }
@@ -144,8 +132,7 @@ public class FornecedorDaoImpl implements FornecedorDao {
                 );
                 fornecedores.add(fornecedor);
             }
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(FornecedorDaoImpl.class.getName()).log(Level.SEVERE, null, ex);
+
         } finally {
             FabricaConexao.fecharConexao(conexao, preparando, resultSet);          
 
@@ -173,8 +160,6 @@ public class FornecedorDaoImpl implements FornecedorDao {
                 );
                 fornecedores.add(fornecedor);
             }
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(FornecedorDaoImpl.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             FabricaConexao.fecharConexao(conexao, preparando, resultSet);          
         }
